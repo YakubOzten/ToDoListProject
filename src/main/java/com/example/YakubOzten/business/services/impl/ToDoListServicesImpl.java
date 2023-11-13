@@ -9,6 +9,7 @@ import com.example.YakubOzten.data.entity.ToDoListEntity;
 import com.example.YakubOzten.data.repository.IToDoListRepository;
 import com.example.YakubOzten.exception.Resource404NotFoundException;
 import com.example.YakubOzten.exception.YakubOztenException;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -65,6 +66,7 @@ public class ToDoListServicesImpl implements IToDoListServices<ToDoListDto, ToDo
     }
  //CREATE
     @Override
+    @Transactional
     public ToDoListDto TodoListServiceCreate(ToDoListDto toDoListDto) {
         if (toDoListDto != null){
         ToDoListEntity toDoListEntity=dtoToEntity(toDoListDto);
@@ -102,6 +104,7 @@ public class ToDoListServicesImpl implements IToDoListServices<ToDoListDto, ToDo
     }
 //UPDATE
     @Override
+    @Transactional
     public ToDoListDto TodoListServiceUpdate(Long id, ToDoListDto toDoListDto) {
        ToDoListEntity toDoListEntity=dtoToEntity(toDoListDto);
        iToDoListRepository.save(toDoListEntity);
@@ -109,6 +112,7 @@ public class ToDoListServicesImpl implements IToDoListServices<ToDoListDto, ToDo
     }
 //DELETE BY ID
     @Override
+    @Transactional
     public ToDoListDto TodoListServiceDeleteById(Long id) {
         ToDoListDto toDoListfindDto=ToDoListServiceFindById(id);
         if (toDoListfindDto!= null){

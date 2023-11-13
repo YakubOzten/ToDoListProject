@@ -44,14 +44,14 @@ public class ToDoListApiImpl implements ITodoListApi<ToDoListDto> {
     // CREATE
     // http://localhost:8080/ToDoList/api/create
     @Override
-    @PostMapping("create")
+    @PostMapping("/create")
     public ResponseEntity<?> toDoListApiCreate(@Valid @RequestBody ToDoListDto toDoListDto) {
         return ResponseEntity.ok(iToDoListServices.TodoListServiceCreate(toDoListDto));
     }
     //LIST
     // http://localhost:8080/ToDoList/api/list
     @Override
-    @GetMapping("list")
+    @GetMapping("/list")
     public ResponseEntity<?> toDoListApiList() {
         return ResponseEntity.ok(iToDoListServices.TodoListServiceList());
     }
