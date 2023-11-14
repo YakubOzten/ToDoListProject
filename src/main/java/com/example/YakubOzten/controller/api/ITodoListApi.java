@@ -10,6 +10,8 @@ public interface ITodoListApi<D> {
 
     // ALL DELETE
     public ResponseEntity<?>toDoListApiDeleteAll();
+    // FIND NAME
+    public ResponseEntity<?> toDoListApiFindByName(String name);
 
     ////////////////////////////////////////////////////////////
     // C R U D

@@ -18,6 +18,7 @@ class RegisterServicesApi {
     toDoListApiDeleteAll() {
         return axios.get(`${ToDoList_URL}/delete/all`);
     }
+
     // C R U D
     // CREATE   
     // http://localhost:8080/ToDoList/api/create

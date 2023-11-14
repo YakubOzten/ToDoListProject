@@ -11,8 +11,8 @@ import ToDoListServiceApi from '../services/ToDoListServiceApi';
 
 
 
-// FUNCTION REGISTER
-function RegisterCreate({ t, i18n, props }) {
+// FUNCTION toDo
+function ToDoCreate({ t, i18n, props }) {
 
 
 
@@ -29,7 +29,7 @@ function RegisterCreate({ t, i18n, props }) {
     const [spinner, setSpinner] = useState(false);
 
 
-    const registerNameOnChange = (event) => {
+    const ToDoNameOnChange = (event) => {
         const { name, value } = event.target;
         //console.log(`${name} => ${value}`);
         setToDoListName(value);
@@ -43,15 +43,11 @@ function RegisterCreate({ t, i18n, props }) {
     }
 
     //// SUBMIT
-    // registerCreateSubmit
-    const registerCreateSubmit = async (event) => {
-        // Register Object
-        const registerCreateObject = {
+    // ToDoListCreate Submit
+    const ToDoCreateSubmit = async (event) => {
+        // ToDoList Object
+        const ToDoCreateObject = {
             name,
-            // registerName,
-            // registerSurname,
-            // registerEmail,
-            // registerPassword,
             isDone,
         }
         // Hataları gösterme
@@ -65,7 +61,7 @@ function RegisterCreate({ t, i18n, props }) {
 
         // API
         try {
-            const response = await ToDoListServiceApi.toDoListApiCreate(registerCreateObject);
+            const response = await ToDoListServiceApi.toDoListApiCreate(ToDoCreateObject);
             if (response.status === 200) {
                 // Spinner Pasif et
                 setSpinner(false);
@@ -73,7 +69,7 @@ function RegisterCreate({ t, i18n, props }) {
                 setMultipleRequest(false);
                 // Toast Message
                 alert("Kayıt Başarılı");
-                //navigate('/register/list');
+                //navigate('/ToDoList/list');
                 navigate('/ToDoList/list');
             }
         } catch (err) {
@@ -100,9 +96,7 @@ function RegisterCreate({ t, i18n, props }) {
 
     //Error
     const classNameData = { error } ? "is-invalid form-control mb-3" : "form-control mb-3";
-    //console.log(error);
-    //console.log(registerSurname);
-    //console.log(classNameData);
+
 
 
 
@@ -123,37 +117,23 @@ function RegisterCreate({ t, i18n, props }) {
                             className={classNameData}
                             id="name"
                             name="name"
-                            placeholder='ToDoListName'
+                            placeholder={t('ToDoListName')}
                             autoFocus={false}
                             required={true}
-                            onChange={registerNameOnChange}
+                            onChange={ToDoNameOnChange}
                         />
                         {
                             error ?
                                 <div className="invalid-feedback">{error.name}</div>
                                 : ''
                         }
-                        {/* <div className="form-group"><label htmlFor="ToDoListisDone">{t('is_Done')}</label>
-                            <input
-                                type="checkbox"
-                                className="form-check-input"
-                                onChange={onChangeIsRead}
-                                name="isDone"
-                                id="isDone" />
-                            {
-                                error ?
-                                    <div className="invalid-feedback">{error.name}</div>
-                                    : ''
-                            }
-                        </div> */}
-                        {/* is_Done */}
                     </div>
 
                 </div>
                 {/* SUBMIT   */}
                 <button
                     type='submit'
-                    onClick={registerCreateSubmit}
+                    onClick={ToDoCreateSubmit}
                     className="btn btn-primary mt-2 me-2"
                     // disabled={ !loginObjectisNull|| (!localStorage.getItem("is_read") == true) || (multipleRequest)}>
                     disabled={(!localStorage.getItem("is_read") === true) || (multipleRequest)}>
@@ -170,25 +150,5 @@ function RegisterCreate({ t, i18n, props }) {
 }
 
 // Export i18n Wrapper
-export default withTranslation()(RegisterCreate);
+export default withTranslation()(ToDoCreate);
 
-
-// function ToDoListCreate() {
-//     return (
-//         <Card>
-//             <Card.Header>ToDoInput</Card.Header>
-//             <Card.Body>
-//                 {/* <Card.Title>Special title treatment</Card.Title> */}
-//                 <input className='form-control' placeholder='New ToDo'></input>
-//                 {/* <Card.Text>
-//             With supporting text below as a natural lead-in to additional content.
-//         </Card.Text> */}
-//                 <br></br>
-//                 <Button className='form-control' variant="primary">Add new task</Button>
-//             </Card.Body>
-//         </Card>
-//     )
-// }
-
-// // Export i18n Wrapper
-// export default withTranslation()(RegisterCreate);

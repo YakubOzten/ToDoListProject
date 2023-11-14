@@ -11,10 +11,8 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import ToDoListCreate from './components/ToDoListCreate'
 import ToDoList from './components/ToDoList'
 import ToDoListUpdate from './components/ToDoListUpdate'
-import ToDoListDelete from './components/ToDoListDelete'
-import ToDoListFind from './components/ToDoListFind'
-import MainPage from './components/MainPage'
 import HeaderProject from './components/HeaderProject'
+import ToDoListView from './components/ToDoListView'
 
 
 // FUNCTION COMPONENT
@@ -30,8 +28,8 @@ function RouterProject() {
                 <Routes>
 
                     {/* ROOT */}
-                    <Route path="/" element={<MainPage />} />
-                    <Route path="/index" element={<MainPage />} />
+                    <Route path="/" element={<ToDoList />} />
+
 
                     {/* LOGIN */}
                     {/* <Route path="/login" element={<Login />} /> */}
@@ -39,12 +37,8 @@ function RouterProject() {
                     {/* REGISTER */}
                     <Route path="/ToDoList/create" element={<ToDoListCreate />} />
                     <Route path="/ToDoList/list" element={<ToDoList />} />
-                    <Route path="/register/view/:id" element={<ToDoListFind />} />
-                    <Route path="/register/update/:id" element={<ToDoListUpdate />} />
-                    <Route path="/register/delete/:id" element={<ToDoListDelete />} />
-
-                    {/* USER PAGE
-                    <Route path="/user" element={<User />} /> */}
+                    <Route path="/ToDo/view/:id" element={<ToDoListView />} />
+                    <Route path="/ToDo/update/:id" element={<ToDoListUpdate />} />
 
                     {/* Bad request */}
                     <Route path={"*"} element={<Navigate to={"/"} />} />

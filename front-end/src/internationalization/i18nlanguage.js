@@ -38,7 +38,10 @@ i18n.use(initReactI18next).init({
                 'todo_Create': 'Todo Create',
                 'ToDoListName': 'Todo Name',
                 'Is_done': 'Is_Done ?',
-                'Save': 'Save'
+                'Save': 'Save',
+                'to-do_update': 'update to-do',
+                'to-do-view-show': 'To-Do Show',
+                'to-do list': 'To-Do List'
             }
         },
         tr:
@@ -75,8 +78,11 @@ i18n.use(initReactI18next).init({
                 'language': 'Diller',
                 'todo_Create': 'Yapılacakları Ekle',
                 'ToDoListName': 'Yapılacak konu',
-                'Is_done': 'Yapıldımı ?',
-                'Save': 'Kaydet'
+                'Is_done': 'Yapıldı mı?',
+                'Save': 'Kaydet',
+                'to-do_update': 'Yapılacakları Güncelle',
+                'to-do-view-show': 'Yapılacakları Göster',
+                'to-do list': 'Yapılacak Listesi',
             }
         }
     },

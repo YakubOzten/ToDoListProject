@@ -31,7 +31,7 @@ public class BlogCommandLineRunner {
         return args -> {
             System.out.println("CommandLineRunner Çalıştı");
             log.info("CommandLineRunner Çalıştı");
-            toDoListServices.ToDoListServiceSpeedData(5L);
+            /*toDoListServices.ToDoListServiceSpeedData(5L);*/
         };
     }
 

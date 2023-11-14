@@ -40,6 +40,13 @@ public class ToDoListApiImpl implements ITodoListApi<ToDoListDto> {
     public ResponseEntity<?> toDoListApiDeleteAll() {
         return ResponseEntity.ok(iToDoListServices.TodoListServiceDeleteAll());
     }
+
+    @Override
+    @GetMapping("/search")
+    public ResponseEntity<?> toDoListApiFindByName(@RequestParam(name = "name")   String name) {
+        return ResponseEntity.ok(iToDoListServices.TodoListServiceFindByName(name));
+    }
+
     // C R U D
     // CREATE
     // http://localhost:8080/ToDoList/api/create
@@ -66,7 +73,7 @@ public class ToDoListApiImpl implements ITodoListApi<ToDoListDto> {
     // http://localhost:8080/ToDoList/api/update/1
     @Override
     @PutMapping(value = "/update/{id}")
-    public ResponseEntity<?> toDoListApiUpdate(@PathVariable(name = "id")@Valid @RequestBody Long id, ToDoListDto toDoListDto) {
+    public ResponseEntity<?> toDoListApiUpdate(@PathVariable(name = "id")Long id, @Valid @RequestBody  ToDoListDto toDoListDto) {
         return ResponseEntity.status(200).body(iToDoListServices.TodoListServiceUpdate(id,toDoListDto));
     }
     // DELETE BY ID

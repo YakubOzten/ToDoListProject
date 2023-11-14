@@ -1,0 +1,12 @@
+.done-row del {
+  background-color: #66ff66;
+  /* Green background for done rows */
+}
+
+.undone-row {
+
+  text-decoration: line-through;
+  text-decoration-color: #ff6666;
+  /* Red background for undone rows */
+
+}

@@ -46,8 +46,8 @@ public class ToDoListServicesImpl implements IToDoListServices<ToDoListDto, ToDo
         ToDoListEntity toDoListEntity=null;
         for (int i=1;i<=key;i++){
           toDoListEntity=ToDoListEntity.builder()
-                  .name("name"+i)
-                  .IsDone(true)
+                  .name("todo-name"+i)
+                  .IsDone(false)
                   .build();
          iToDoListRepository.save(toDoListEntity);
           toDoListDtoList.add(entityToDto(toDoListEntity));
@@ -64,7 +64,18 @@ public class ToDoListServicesImpl implements IToDoListServices<ToDoListDto, ToDo
 
         return iToDoListRepository.findAll().toString();
     }
- //CREATE
+//FIND NAME
+    @Override
+    public ToDoListDto TodoListServiceFindByName(String name) {
+        Optional<ToDoListEntity> toDoListEntity=iToDoListRepository.findByName(name);
+        ToDoListDto toDoListDto=entityToDto(toDoListEntity.get());
+        if(toDoListDto != null){
+        return toDoListDto;
+        }
+        return null;
+    }
+
+    //CREATE
     @Override
     @Transactional
     public ToDoListDto TodoListServiceCreate(ToDoListDto toDoListDto) {
@@ -106,8 +117,17 @@ public class ToDoListServicesImpl implements IToDoListServices<ToDoListDto, ToDo
     @Override
     @Transactional
     public ToDoListDto TodoListServiceUpdate(Long id, ToDoListDto toDoListDto) {
-       ToDoListEntity toDoListEntity=dtoToEntity(toDoListDto);
-       iToDoListRepository.save(toDoListEntity);
+        // FIND
+        ToDoListDto toDoListfindDto= ToDoListServiceFindById(id);
+      ToDoListEntity toDoListEntity=null;
+      if (toDoListfindDto != null){
+          toDoListEntity=dtoToEntity(toDoListDto);
+          toDoListEntity.setId(id);
+          toDoListEntity.setName(toDoListDto.getName());
+          toDoListEntity.setIsDone(toDoListDto.getIsDone());
+          iToDoListRepository.save(toDoListEntity);
+      }
+
         return entityToDto(toDoListEntity);
     }
 //DELETE BY ID

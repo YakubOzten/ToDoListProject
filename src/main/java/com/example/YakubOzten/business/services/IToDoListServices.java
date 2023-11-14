@@ -15,6 +15,9 @@ public interface IToDoListServices <D,E> {
     //ALL DELETE
     public  String TodoListServiceDeleteAll();
 
+    // FIND SURNAME
+    public D TodoListServiceFindByName(String name);
+
     ////////////////////////////////////////////////////////////
     // REGISTER C R U D
     // CREATE

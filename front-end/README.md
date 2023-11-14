@@ -1,3 +1,98 @@
+
+(GitHub Link)["https://github.com/YakubOzten/ToDoListProject"]
+
+## Technology
+- *Java*  **Core**
+- *Java* `Spring Boot`
+
+### Bean
+```sh
+ModelMapper
+OpenApiConfiguration
+```
+
+### Exception
+```sh
+YakubOztenException
+ResourceAuthorizedException
+ResourceNotFoundException
+ResourceCreatedException
+ResourceBadRequestException
+```
+
+### 
+```sh
+ToDoListDto
+BaseEntity
+ToDoListEntity
+IToDoListRepository
+IToDoListServices
+ToDoListServicesImpl
+IToDoListApi
+ToDoListApiImpl
+```
+
+### 
+```sh
+Proje ToDoList Uygulamasıdır.
+Projede Kullanılan Operasyonlar
+Create
+Delete
+Update
+List
+FindById
+FindByName
+SpeedData
+AllDelete
+```
+
+## Tecnology
+##FrontEnd
+- Html5
+- Css3
+- responsive design
+- Js
+- jquery
+- Bootstrap
+- react
+
+
+---
+
+## BackEnd
+* javase
+* jdbc crud native
+* hibernate
+* spring core
+* spring mvc
+* spring data
+* spring rest
+* spring security
+
+---
+
+## Libraries
+Lombok
+Validation
+
+## Database
+Postgresql
+
+---
+## dependency
+Spring Web
+Spring Data JPA
+Spring Rest
+Spring Security
+
+---
+# Spring Tools
+Spring Boot DevTools
+Spring Configuration Processor
+Spring Boot Actuator
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
