@@ -88,7 +88,7 @@ function ToDoList({ t, i18n, props }) {
                     if (response.status === 200) {
                         listManipulationAfter();
                         //navigate('/ToDoList/list')
-                        window.location = "/ToDoList/list"
+                        navigate('/ToDoList/list')
                     }
                 })
                 .catch((err) => { console.log(err); })

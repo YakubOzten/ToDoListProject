@@ -163,7 +163,7 @@ class HeaderProject extends Component {
                                         aria-haspopup="true"
                                         aria-expanded="false"
                                     >
-                                        {t('registers')}
+                                        {t('to-do')}
                                     </a>
 
                                     <div className="dropdown-menu" aria-labelledby="dropdownId">

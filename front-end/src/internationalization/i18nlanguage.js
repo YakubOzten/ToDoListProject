@@ -41,7 +41,8 @@ i18n.use(initReactI18next).init({
                 'Save': 'Save',
                 'to-do_update': 'update to-do',
                 'to-do-view-show': 'To-Do Show',
-                'to-do list': 'To-Do List'
+                'to-do list': 'To-Do List',
+                'to-do': 'things to do'
             }
         },
         tr:
@@ -83,6 +84,7 @@ i18n.use(initReactI18next).init({
                 'to-do_update': 'Yapılacakları Güncelle',
                 'to-do-view-show': 'Yapılacakları Göster',
                 'to-do list': 'Yapılacak Listesi',
+                'to-do': 'Yapılacaklar'
             }
         }
     },

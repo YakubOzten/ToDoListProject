@@ -31,6 +31,4 @@ public class ToDoListEntity extends BaseEntity implements Serializable {
     @Column(name = "IsDone")
     private Boolean IsDone=false;
 
-
-
 }
